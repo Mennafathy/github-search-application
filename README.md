@@ -1,6 +1,7 @@
 # GithubSearchApplication
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+i have used ngrx and api calls for listing ,search and user-details 
 
 ## Development server
 
