@@ -1,0 +1,37 @@
+@if (userData && !(loading$|async)) {
+<div class="card p-5">
+  <div class="user-card row align-items-center">
+    <div class="col-md-6">
+      <img [src]="userData.avatar_url" [alt]="userData.login" class="avatar" />
+    </div>
+    <div class="col-md-6">
+      <h2>{{ userData.name || userData.login }}</h2>
+
+      <p class="bio">{{ userData.bio }}</p>
+      <p>{{ userData.company }}</p>
+      <p>{{ userData.location }}</p>
+
+      <p>
+        <a
+          [href]="'https://twitter.com/' + userData.twitter_username"
+          target="_blank"
+        >
+          {{ userData.twitter_username }}
+        </a>
+      </p>
+
+      <div class="stats">
+        <p>Public Repos: {{ userData.public_repos }}</p>
+        <p>Followers: {{ userData.followers }}</p>
+        <p>Following: {{ userData.following }}</p>
+      </div>
+
+      <p class="meta">Joined: {{ userData.created_at | date : "longDate" }}</p>
+      <button class="btn btn-primary" (click)="goBack()">Back</button>
+    </div>
+  </div>
+</div>
+
+} @else {
+<div class="spinner"></div>
+}
